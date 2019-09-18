@@ -53,20 +53,18 @@ Variable STND_order: forall d: Degree, forall C: CN_G(d),  forall A: ADJ d C,  S
 Set Implicit Arguments.
 Record enormousidiot: Set:= mkEidiot
        {h:> Idiot; EI:  enormous IDIOCY (IHuman(projT1(h))) (projT1(h))(projT1(projT2(h))) }.
-Theorem  b:
+       
+Theorem  EI1:
   enormousidiot -> exists H: Idiot,   projT1(H) > STND IDIOCY (PHY IDIOCY) (ENORMOUS IDIOCY).
   cbv. firstorder. Qed.
-Theorem bt1:
+Theorem EI2:
   enormousidiot -> exists H: Idiot,   projT1(H) > STND IDIOCY (PHY IDIOCY) (ENORMOUS IDIOCY) /\ projT1(H) >  (STND IDIOCY Human IDIOTIC).
   cbv. firstorder. unfold Idiot in h0. exists h0. firstorder.
   unfold enormous in EI0. firstorder. elim  h0. intros. destruct p.
   omega. Qed.
-Theorem bt3:
+  
+Theorem EI3:
   enormousidiot -> exists H: Idiot,   projT1(H) > STND IDIOCY (PHY IDIOCY) (ENORMOUS IDIOCY) /\ projT1(H) >  (STND IDIOCY Human IDIOTIC) /\  STND IDIOCY (PHY IDIOCY) (ENORMOUS IDIOCY) > (STND IDIOCY Human IDIOTIC).
     cbv. firstorder. unfold Idiot in h0. exists h0. firstorder.
   unfold enormous in EI0. firstorder. elim  h0. intros. destruct p.
   omega. Qed.
-
-(**Definition enormousidiot:=  sigT(fun h: Idiot => Enormous (**IDIOCY  (IHuman(projT1(h)))**)(q) (projT1(projT2(h)))). 
-Definition enormousidiot1:=   sigT(fun h: Idiot => Enormous1 IDIOCY (IHuman(projT1(h))) (projT1(h))(projT1(projT2(h)))).**)
-(**Parameter  Enormous : forall d: Degree, forall A :  CN_G(d), forall p:(sigT(fun d1: D d  => d1 > (STND  d (PHY(d))(ENORMOUS d)))), A -> Prop.**)
